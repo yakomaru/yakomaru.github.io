@@ -40,13 +40,13 @@
     <description>Really cool blog about ... something</description>
     <link>http://yakomaru.github.io</link>
     <atom:link href="http://yakomaru.github.iofeed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 12 Jul 2015 16:17:00 -0700</pubDate>
-    <lastBuildDate>Sun, 12 Jul 2015 16:17:00 -0700</lastBuildDate>
+    <pubDate>Sun, 12 Jul 2015 16:38:46 -0700</pubDate>
+    <lastBuildDate>Sun, 12 Jul 2015 16:38:46 -0700</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
         <title>why use higher-order functions?</title>
-        <description>&lt;p&gt;This explains an argument for increased higher-order function usage to improve readability and debugging.&lt;/p&gt;
+        <description>&lt;p&gt;This presents an argument for increased higher-order function usage to improve readability and debugging.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;More concise code&lt;/strong&gt;&lt;/p&gt;
 
