@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Niklas Buschmann 2015 MIT <http://github.com/niklasbuschmann> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    
+    <meta name="description" content="Really cool blog about ... something">
+    <title>Nathaniel Parrish</title>
+    <link rel="canonical" href="yakomaru.github.io/feed.xml">
+    <link href="/main.css" rel="stylesheet" type="text/css">
+    <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,200italic,300italic,400italic,600italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Gentium+Basic:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+    <link rel="alternate" type="application/rss+xml" title="Nathaniel Parrish &raquo; Feed" href="/feed.xml">
+    
+    
+  </head>
+  <body>
+    <header>
+      <h1><a href="/">Nathaniel Parrish</a></h1>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li><li><a href="/archive.html">Archive</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+    
+    <article>
+      <header>
+        <h2><a href="/feed.xml"></a></h2>
+        <p></p>
+      </header>
+      <div>
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nathaniel Parrish</title>
+    <description>Really cool blog about ... something</description>
+    <link>yakomaru.github.io</link>
+    <atom:link href="yakomaru.github.iofeed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Sun, 12 Jul 2015 15:17:02 -0700</pubDate>
+    <lastBuildDate>Sun, 12 Jul 2015 15:17:02 -0700</lastBuildDate>
+    <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>why use higher-order functions?</title>
+        <description>&lt;p&gt;This explains an argument for increased higher-order function usage to improve readability and debugging.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;More concise code&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Consider the following examples in English:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;I &lt;strong&gt;&lt;em&gt;went&lt;/em&gt;&lt;/strong&gt; to the city.&lt;/p&gt;
+
+  &lt;p&gt;I &lt;strong&gt;&lt;em&gt;drove&lt;/em&gt;&lt;/strong&gt; to the city.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Note that &lt;strong&gt;&lt;em&gt;went&lt;/em&gt;&lt;/strong&gt; can be used in more cases than &lt;strong&gt;&lt;em&gt;drove&lt;/em&gt;&lt;/strong&gt;. However, &lt;strong&gt;&lt;em&gt;drove&lt;/em&gt;&lt;/strong&gt;
+more accurately describes how I got to the city. &lt;strong&gt;&lt;em&gt;Drove&lt;/em&gt;&lt;/strong&gt; is the more concise version
+of &lt;strong&gt;&lt;em&gt;went&lt;/em&gt;&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Now consider a similar example in javascript:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;array&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;//code&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// -&amp;gt; ???&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;some&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;element&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;//code&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// -&amp;gt; true/false&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Similarly, the for loop is more versatile and can perform the same operation as the some()
+function below it, but its versatility is also a drawback because we don’t know what it
+will do until we study the code within its curly brackets. The some() function is much more
+descriptive as it will always iterate over the array and return true or false depending on 
+if any of the array’s elements pass a truth test.&lt;/p&gt;
+
+&lt;p&gt;The takeaway here is that higher-order functions are much clearer than their low-level equivalents.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Standard inputs and outputs&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Higher-order functions wrap low-level code within an appropriately named function
+with the goal of standardizing the inputs and outputs.&lt;/p&gt;
+
+&lt;p&gt;For example:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;array&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;callback&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;element&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;element&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;callback&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// -&amp;gt; [2, 3, 4]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The higher-order function map takes an array and a callback function
+as input and performs the callback on every element of the array. Map then returns
+a new array with the results of the operation.&lt;/p&gt;
+
+&lt;p&gt;The important thing to note in this example is that map will always return an array
+and that array will always have the same number of elements as the array passed into
+it. The input and output for map is standardized to these constraints so that no surprises
+come out of it.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Conclusion&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Higher-order functions offer some great readability benefits at only a slight cost to
+the call stack and run time. The main difficulty with them involves learing what
+each one does. Much like expanding your vocabulary in English, expanding your higher
+order function vocabulary in Javascript takes time, but the benefits are well worth it.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;External resources&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://eloquentjavascript.net/05_higher_order.html&quot;&gt;Eloquent Javascript Chapter 5: Higher-Order Functions&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sun, 12 Jul 2015 05:00:00 -0700</pubDate>
+        <link>yakomaru.github.io/javascript/2015/07/12/why-use-higher-order-functions.html</link>
+        <guid isPermaLink="true">yakomaru.github.io/javascript/2015/07/12/why-use-higher-order-functions.html</guid>
+        
+        
+        <category>javascript</category>
+        
+      </item>
+    
+  </channel>
+</rss>
+      </div>
+      
+      
+    </article>
+
+    <footer>
+      <span><a href="yakomaru.github.io">Nathaniel Parrish</a></span>
+      <span><a href="https://github.com/yakomaru/"><i class="fa fa-github-square"></i></a><a href="https://plus.google.com/117699387184762704869/about/p/pub"><i class="fa fa-google-plus-square"></i></a></span>
+      <span>&copy; 2015</span>
+    </footer>
+  </body>
+</html>

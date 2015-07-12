@@ -1,0 +1,36 @@
+title: "Nathaniel Parrish"
+author: "Nathaniel Parrish"
+description: "Really cool blog about ... something"
+#subheading: "Really cool blog about ... something"
+more: "read more"
+url: "http://yakomaru.github.io"
+#baseurl: "/contrast" # comment out if in root directory
+
+comments:
+    disqus: "nathanielparrish"
+#    isso: "comments.mysite.org"
+
+style:
+#    body: "whitesmoke"
+    padding: 33%
+    anchor: "#46f"
+    serif-heading: true
+    nav: "#181818"
+#    headline: "#06f"
+    description: "white"
+    article:
+        odd: "#ffffff"
+        even: "#222222"
+
+links:
+  - github: "https://github.com/yakomaru/"
+#  - twitter: "https://twitter.com/me/"
+  - google-plus: "https://plus.google.com/117699387184762704869/about/p/pub"
+#  - reddit: "https://www.reddit.com/user/me/"
+#  - youtube: "https://www.youtube.com/user/me"
+#  - steam: "http://steamcommunity.com/id/me/"
+
+excerpt_separator: "\n\n\n"
+defaults: [{scope: {path: ""}, values: {layout: "default"}}, {scope: {path: "", type: "posts"}, values: {comments: true}}]
+highlighter: rouge
+encoding: utf-8
