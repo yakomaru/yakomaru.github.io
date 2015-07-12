@@ -7,7 +7,7 @@
     
     <meta name="description" content="Really cool blog about ... something">
     <title>Nathaniel Parrish</title>
-    <link rel="canonical" href="yakomaru.github.io/feed.xml">
+    <link rel="canonical" href="http://yakomaru.github.io/feed.xml">
     <link href="/main.css" rel="stylesheet" type="text/css">
     <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,200italic,300italic,400italic,600italic,700italic' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Gentium+Basic:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
@@ -38,10 +38,10 @@
   <channel>
     <title>Nathaniel Parrish</title>
     <description>Really cool blog about ... something</description>
-    <link>yakomaru.github.io</link>
-    <atom:link href="yakomaru.github.iofeed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 12 Jul 2015 15:17:02 -0700</pubDate>
-    <lastBuildDate>Sun, 12 Jul 2015 15:17:02 -0700</lastBuildDate>
+    <link>http://yakomaru.github.io</link>
+    <atom:link href="http://yakomaru.github.iofeed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Sun, 12 Jul 2015 16:17:00 -0700</pubDate>
+    <lastBuildDate>Sun, 12 Jul 2015 16:17:00 -0700</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -117,8 +117,8 @@ order function vocabulary in Javascript takes time, but the benefits are well wo
 &lt;p&gt;&lt;a href=&quot;http://eloquentjavascript.net/05_higher_order.html&quot;&gt;Eloquent Javascript Chapter 5: Higher-Order Functions&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Sun, 12 Jul 2015 05:00:00 -0700</pubDate>
-        <link>yakomaru.github.io/javascript/2015/07/12/why-use-higher-order-functions.html</link>
-        <guid isPermaLink="true">yakomaru.github.io/javascript/2015/07/12/why-use-higher-order-functions.html</guid>
+        <link>http://yakomaru.github.io/javascript/2015/07/12/why-use-higher-order-functions.html</link>
+        <guid isPermaLink="true">http://yakomaru.github.io/javascript/2015/07/12/why-use-higher-order-functions.html</guid>
         
         
         <category>javascript</category>
@@ -133,7 +133,7 @@ order function vocabulary in Javascript takes time, but the benefits are well wo
     </article>
 
     <footer>
-      <span><a href="yakomaru.github.io">Nathaniel Parrish</a></span>
+      <span><a href="http://yakomaru.github.io">Nathaniel Parrish</a></span>
       <span><a href="https://github.com/yakomaru/"><i class="fa fa-github-square"></i></a><a href="https://plus.google.com/117699387184762704869/about/p/pub"><i class="fa fa-google-plus-square"></i></a></span>
       <span>&copy; 2015</span>
     </footer>

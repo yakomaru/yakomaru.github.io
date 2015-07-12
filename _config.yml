@@ -1,7 +1,7 @@
 title: "Nathaniel Parrish"
 author: "Nathaniel Parrish"
-description: "Really cool blog about ... something"
-#subheading: "Really cool blog about ... something"
+description: "Software engineering blog"
+subheading: "Software engineering blog"
 more: "read more"
 url: "http://yakomaru.github.io"
 #baseurl: "/contrast" # comment out if in root directory
