@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     
-    <meta name="description" content="Really cool blog about ... something">
+    <meta name="description" content="Software engineering blog">
     <title>Nathaniel Parrish</title>
     <link rel="canonical" href="http://yakomaru.github.io/feed.xml">
     <link href="/main.css" rel="stylesheet" type="text/css">
@@ -26,7 +26,7 @@
       </nav>
     </header>
     
-    
+    <div>Software engineering blog</div>
     <article>
       <header>
         <h2><a href="/feed.xml"></a></h2>
@@ -37,12 +37,76 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Nathaniel Parrish</title>
-    <description>Really cool blog about ... something</description>
+    <description>Software engineering blog</description>
     <link>http://yakomaru.github.io</link>
     <atom:link href="http://yakomaru.github.iofeed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 12 Jul 2015 16:38:46 -0700</pubDate>
-    <lastBuildDate>Sun, 12 Jul 2015 16:38:46 -0700</lastBuildDate>
+    <pubDate>Sun, 12 Jul 2015 18:01:59 -0700</pubDate>
+    <lastBuildDate>Sun, 12 Jul 2015 18:01:59 -0700</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>convert binary to decimal with mental math</title>
+        <description>&lt;p&gt;A tutorial on how to convert binary numbers in your head.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Usefulness&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;While this skill isn’t terribly useful, since a quick Google search will list several sites which
+can perform the conversion for you, it has been known to show up in technical interview questions and
+it’s pretty impressive to people who don’t understand how it works.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;How it works&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The general idea is to move from the left side of the number to the right. Every time you shift,
+multiply your running total by 2, and when you hit a 1, add it to your total.&lt;/p&gt;
+
+&lt;p&gt;Example:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-plain&quot; data-lang=&quot;plain&quot;&gt;101010
+^ start with 1 (total = 1)
+101010
+ ^ shift to the right means multiply by 2, 
+ the digit is 0 so don&#39;t add anything (total = 2)
+101010
+  ^ shift again, multiply by 2, and then add 1 
+  because there&#39;s a 1 here (total = 5)
+101010
+   ^ another shift, multiply by 2 (total = 10)
+101010
+    ^ another shift and a 1 so multiply by 2 and 
+    add 1 (total = 21)
+101010
+     ^ last shift, multiply by 2 and we&#39;re done 
+     (total = 42)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Working with fractions&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Converting binary fractions is a bit harder but follows a similar pattern. The difference here
+is the starting point is the right side and the end is the ones place. Also, we divide by 2 instead
+of multiplying by 2 as we shift.&lt;/p&gt;
+
+&lt;p&gt;Example:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-plain&quot; data-lang=&quot;plain&quot;&gt;0.101
+    ^ start with 1 (total = 1)
+0.101
+   ^ divide by 2 (total = 0.5)
+0.101
+  ^ divide by 2 then add 1 (total = 1.25)
+0.101
+^ divide by 2 and we&#39;re done (total = 0.625)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;External resources&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.exploringbinary.com/binary-converter/&quot;&gt;Exploring Binary: Binary Converter&lt;/a&gt; You can use this if you want to test yourself.&lt;/p&gt;
+</description>
+        <pubDate>Sun, 12 Jul 2015 10:00:00 -0700</pubDate>
+        <link>http://yakomaru.github.io/tricks/2015/07/12/convert-binary-to-decimal-with-mental-math.html</link>
+        <guid isPermaLink="true">http://yakomaru.github.io/tricks/2015/07/12/convert-binary-to-decimal-with-mental-math.html</guid>
+        
+        
+        <category>tricks</category>
+        
+      </item>
     
       <item>
         <title>why use higher-order functions?</title>

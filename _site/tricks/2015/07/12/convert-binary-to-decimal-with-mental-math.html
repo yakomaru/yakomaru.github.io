@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Niklas Buschmann 2015 MIT <http://github.com/niklasbuschmann> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    
+    <meta name="description" content="Software engineering blog">
+    <title> convert binary to decimal with mental math › Nathaniel Parrish</title>
+    <link rel="canonical" href="http://yakomaru.github.io/tricks/2015/07/12/convert-binary-to-decimal-with-mental-math.html">
+    <link href="/main.css" rel="stylesheet" type="text/css">
+    <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,200italic,300italic,400italic,600italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Gentium+Basic:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+    <link rel="alternate" type="application/rss+xml" title="Nathaniel Parrish &raquo; Feed" href="/feed.xml">
+    <script src="//nathanielparrish.disqus.com/embed.js" async></script>
+    
+  </head>
+  <body>
+    <header>
+      <h1><a href="/">Nathaniel Parrish</a></h1>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li><li><a href="/archive.html">Archive</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+    <div>Software engineering blog</div>
+    <article>
+      <header>
+        <h2><a href="/tricks/2015/07/12/convert-binary-to-decimal-with-mental-math.html">convert binary to decimal with mental math</a></h2>
+        <p><time datetime="2015-07-12T10:00:00-07:00">Jul 12, 2015</time> • tricks</p>
+      </header>
+      <div>
+<p>A tutorial on how to convert binary numbers in your head.</p>
+
+<p><strong>Usefulness</strong></p>
+
+<p>While this skill isn’t terribly useful, since a quick Google search will list several sites which
+can perform the conversion for you, it has been known to show up in technical interview questions and
+it’s pretty impressive to people who don’t understand how it works.</p>
+
+<p><strong>How it works</strong></p>
+
+<p>The general idea is to move from the left side of the number to the right. Every time you shift,
+multiply your running total by 2, and when you hit a 1, add it to your total.</p>
+
+<p>Example:</p>
+
+<div class="highlight"><pre><code class="language-plain" data-lang="plain">101010
+^ start with 1 (total = 1)
+101010
+ ^ shift to the right means multiply by 2, 
+ the digit is 0 so don't add anything (total = 2)
+101010
+  ^ shift again, multiply by 2, and then add 1 
+  because there's a 1 here (total = 5)
+101010
+   ^ another shift, multiply by 2 (total = 10)
+101010
+    ^ another shift and a 1 so multiply by 2 and 
+    add 1 (total = 21)
+101010
+     ^ last shift, multiply by 2 and we're done 
+     (total = 42)</code></pre></div>
+
+<p><strong>Working with fractions</strong></p>
+
+<p>Converting binary fractions is a bit harder but follows a similar pattern. The difference here
+is the starting point is the right side and the end is the ones place. Also, we divide by 2 instead
+of multiplying by 2 as we shift.</p>
+
+<p>Example:</p>
+
+<div class="highlight"><pre><code class="language-plain" data-lang="plain">0.101
+    ^ start with 1 (total = 1)
+0.101
+   ^ divide by 2 (total = 0.5)
+0.101
+  ^ divide by 2 then add 1 (total = 1.25)
+0.101
+^ divide by 2 and we're done (total = 0.625)</code></pre></div>
+
+<p><strong>External resources</strong></p>
+
+<p><a href="http://www.exploringbinary.com/binary-converter/">Exploring Binary: Binary Converter</a> You can use this if you want to test yourself.</p>
+
+      </div>
+      
+      
+      <div id="disqus_thread"></div>
+      <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      
+    </article>
+
+    <footer>
+      <span><a href="http://yakomaru.github.io">Nathaniel Parrish</a></span>
+      <span><a href="https://github.com/yakomaru/"><i class="fa fa-github-square"></i></a><a href="https://plus.google.com/117699387184762704869/about/p/pub"><i class="fa fa-google-plus-square"></i></a></span>
+      <span>&copy; 2015</span>
+    </footer>
+  </body>
+</html>
