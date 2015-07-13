@@ -4,7 +4,7 @@ date:   2015-07-12 12:00:00
 categories: javascript
 ---
 
-This presents an argument for increased higher-order function usage to improve readability and debugging.
+An argument for increased higher-order function usage to improve readability and debugging.
 
 
 **More concise code**
