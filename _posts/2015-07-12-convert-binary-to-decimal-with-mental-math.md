@@ -20,7 +20,7 @@ multiply your running total by 2, and when you hit a 1, add it to your total.
 
 Example:
 
-{% highlight plain %}
+{% highlight text %}
 
 101010
 ^ start with 1 (total = 1)
@@ -49,7 +49,7 @@ of multiplying by 2 as we shift.
 
 Example:
 
-{% highlight plain %}
+{% highlight text %}
 
 0.101
     ^ start with 1 (total = 1)
