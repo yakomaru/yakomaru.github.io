@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Niklas Buschmann 2015 MIT <http://github.com/niklasbuschmann> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    
+    <meta name="description" content="Software engineering blog">
+    <title> building faster algorithms with objects › Nathaniel Parrish</title>
+    <link rel="canonical" href="http://yakomaru.github.io/javascript/2015/07/19/building-faster-algorithms-with-objects.html">
+    <link href="/main.css" rel="stylesheet" type="text/css">
+    <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,200italic,300italic,400italic,600italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Gentium+Basic:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+    <link rel="alternate" type="application/rss+xml" title="Nathaniel Parrish &raquo; Feed" href="/feed.xml">
+    <script src="//nathanielparrish.disqus.com/embed.js" async></script>
+    
+  </head>
+  <body>
+    <header>
+      <h1><a href="/">Nathaniel Parrish</a></h1>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li><li><a href="/archive.html">Archive</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+    <div>Software engineering blog</div>
+    <article>
+      <header>
+        <h2><a href="/javascript/2015/07/19/building-faster-algorithms-with-objects.html">building faster algorithms with objects</a></h2>
+        <p><time datetime="2015-07-19T11:30:00-07:00">Jul 19, 2015</time> • javascript</p>
+      </header>
+      <div>
+<p>A guide on how to use storage objects instead of nested loops for faster array and string
+manipulation.</p>
+
+<p><strong>Consider this problem</strong></p>
+
+<p>Let’s say we need to perform some statistical calculations on an array of data. One requirement
+might be to find the mode of a given data set. The mode of a given set of numbers is the number
+repeated most.</p>
+
+<p>For the sake of simplicity, let’s assume that the data set only has one mode. A naive approach
+to solving the problem might be to use nested loops to compare each number with the rest of
+the array and count up the number of times it repeats.</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">nestedMode</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">array</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">highest</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+  <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">array</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">counter</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">j</span> <span class="o">=</span> <span class="nx">i</span><span class="p">;</span> <span class="nx">j</span> <span class="o">&lt;</span> <span class="nx">array</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">if</span><span class="p">(</span><span class="nx">array</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">===</span> <span class="nx">array</span><span class="p">[</span><span class="nx">j</span><span class="p">])</span> <span class="p">{</span>
+        <span class="nx">counter</span><span class="o">++</span><span class="p">;</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">counter</span> <span class="o">&gt;</span> <span class="nx">highest</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kd">var</span> <span class="nx">mode</span> <span class="o">=</span> <span class="nx">array</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+      <span class="nx">highest</span> <span class="o">=</span> <span class="nx">counter</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="nx">mode</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="c1">// example input: [1, 2, 3, 4, 4, 2, 1, 1]</span>
+<span class="c1">// mode: 1</span></code></pre></div>
+
+<p>The time complexity of this algorithm is O(n^2) because the time it takes to solve the problem
+increases by the length of the array squared. This means the algorithm is scaling very
+poorly with large data sets to a point where it might not even be useful.</p>
+
+<p><strong>Taking advantage of objects</strong></p>
+
+<p>A better approach to finding the mode is to count up repeated numbers within an object. With all
+this information saved, the nested loop becomes unnecessary.</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">storageMode</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">array</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">storage</span> <span class="o">=</span> <span class="p">{};</span>
+  <span class="kd">var</span> <span class="nx">highest</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+  <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">array</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">key</span> <span class="o">=</span> <span class="nx">array</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">storage</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span> <span class="o">===</span> <span class="kc">undefined</span><span class="p">)</span> <span class="p">{</span>  <span class="c1">// check if the key doesn't exist</span>
+      <span class="nx">storage</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>  <span class="c1">// create key and set the initial value to 1</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nx">storage</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span><span class="o">++</span><span class="p">;</span>  <span class="c1">// add 1 if the key already exists</span>
+    <span class="p">}</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">storage</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span> <span class="o">&gt;</span> <span class="nx">highest</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kd">var</span> <span class="nx">mode</span> <span class="o">=</span> <span class="nx">key</span><span class="p">;</span>
+      <span class="nx">highest</span> <span class="o">=</span> <span class="nx">storage</span><span class="p">[</span><span class="nx">key</span><span class="p">];</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="nx">mode</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="c1">// example input: [2, 2, 3, 4, 4, 2, 1, 1]</span>
+<span class="c1">// storage will look like: {'1': 2, '2': 3, '3': 1, '4': 2}</span>
+<span class="c1">// mode: 2</span></code></pre></div>
+
+<p>Here we can see that the object in this algorithm requires more space in memory, 
+but the removal of the nested for loop means this algorithm has O(n) time complexity because it scales
+linearly as the size of the array increases.</p>
+
+<p>To put this into perspective, if an array of size 100 is passed into the first algorithm, the
+time it takes to complete will increase by an order of 10000, yet the second algorithm
+will only increase by an order of 100. This is a very noticeable difference with large arrays.</p>
+
+<p><strong>Trading space for speed</strong></p>
+
+<p>Optimization is often about tradeoffs; improving one aspect of your code may require a sacrifice
+elsewhere. When using objects to store data, the goal is to increase the speed of the algorithm
+at a cost to storage. In most cases, this is a very good trade because processing power is much
+more valuable than memory.</p>
+
+      </div>
+      
+      
+      <div id="disqus_thread"></div>
+      <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      
+    </article>
+
+    <footer>
+      <span><a href="http://yakomaru.github.io">Nathaniel Parrish</a></span>
+      <span><a href="https://github.com/yakomaru/"><i class="fa fa-github-square"></i></a><a href="https://plus.google.com/117699387184762704869/about/p/pub"><i class="fa fa-google-plus-square"></i></a></span>
+      <span>&copy; 2015</span>
+    </footer>
+  </body>
+</html>

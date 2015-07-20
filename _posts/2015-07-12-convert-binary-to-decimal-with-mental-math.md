@@ -1,7 +1,7 @@
 ---
 title:  "convert binary to decimal with mental math"
 date:   2015-07-12 17:00:00
-categories: tricks
+categories: binary
 ---
 
 A tutorial on how to convert binary numbers in your head.
