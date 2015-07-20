@@ -3,7 +3,7 @@ author: "Nathaniel Parrish"
 description: "Software engineering blog"
 subheading: "Software engineering blog"
 more: "read more"
-url: "http://yakomaru.github.io"
+url: http://nathanielparrish.com
 #baseurl: "/contrast" # comment out if in root directory
 
 comments:
@@ -32,5 +32,4 @@ links:
 
 excerpt_separator: "\n\n\n"
 defaults: [{scope: {path: ""}, values: {layout: "default"}}, {scope: {path: "", type: "posts"}, values: {comments: true}}]
-#highlighter: rouge
 encoding: utf-8
