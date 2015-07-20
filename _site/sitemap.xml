@@ -1,18 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    {% for post in site.posts %}
-    <url>
-        <loc>{{ site.url }}{{ post.url | remove: 'index.html' }}</loc>
-    </url>
-    {% endfor %}
-
-    {% for page in site.pages %}
-    {% if page.layout != nil %}
-    {% if page.layout != 'redirect' %}
-    <url>
-        <loc>{{ site.url }}{{ page.url | remove: 'index.html' }}</loc>
-    </url>
-    {% endif %}
-    {% endif %}
-    {% endfor %}
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>http://nathanielparrish.com/javascript/2015/07/19/building-faster-algorithms-with-objects.html</loc>
+    <lastmod>2015-07-19T11:30:00-07:00</lastmod>
+  </url>
+  <url>
+    <loc>http://nathanielparrish.com/binary/2015/07/12/convert-binary-to-decimal-with-mental-math.html</loc>
+    <lastmod>2015-07-12T10:00:00-07:00</lastmod>
+  </url>
+  <url>
+    <loc>http://nathanielparrish.com/javascript/2015/07/12/why-use-higher-order-functions.html</loc>
+    <lastmod>2015-07-12T05:00:00-07:00</lastmod>
+  </url>
+  <url>
+    <loc>http://nathanielparrish.com/404.html</loc>
+  </url>
+  <url>
+    <loc>http://nathanielparrish.com/archive.html</loc>
+  </url>
+  <url>
+    <loc>http://nathanielparrish.com/</loc>
+  </url>
 </urlset>

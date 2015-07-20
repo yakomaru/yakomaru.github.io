@@ -7,7 +7,7 @@
     
     <meta name="description" content="Software engineering blog">
     <title>Nathaniel Parrish</title>
-    <link rel="canonical" href="http://yakomaru.github.io/feed.xml">
+    <link rel="canonical" href="http://nathanielparrish.com/feed.xml">
     <link href="/main.css" rel="stylesheet" type="text/css">
     <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,200italic,300italic,400italic,600italic,700italic' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Gentium+Basic:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
@@ -38,10 +38,10 @@
   <channel>
     <title>Nathaniel Parrish</title>
     <description>Software engineering blog</description>
-    <link>http://yakomaru.github.io</link>
-    <atom:link href="http://yakomaru.github.iofeed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 20 Jul 2015 10:56:36 -0700</pubDate>
-    <lastBuildDate>Mon, 20 Jul 2015 10:56:36 -0700</lastBuildDate>
+    <link>http://nathanielparrish.com</link>
+    <atom:link href="http://nathanielparrish.comfeed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Mon, 20 Jul 2015 11:15:31 -0700</pubDate>
+    <lastBuildDate>Mon, 20 Jul 2015 11:15:31 -0700</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -130,8 +130,8 @@ at a cost to storage. In most cases, this is a very good trade because processin
 more valuable than memory.&lt;/p&gt;
 </description>
         <pubDate>Sun, 19 Jul 2015 11:30:00 -0700</pubDate>
-        <link>http://yakomaru.github.io/javascript/2015/07/19/building-faster-algorithms-with-objects.html</link>
-        <guid isPermaLink="true">http://yakomaru.github.io/javascript/2015/07/19/building-faster-algorithms-with-objects.html</guid>
+        <link>http://nathanielparrish.com/javascript/2015/07/19/building-faster-algorithms-with-objects.html</link>
+        <guid isPermaLink="true">http://nathanielparrish.com/javascript/2015/07/19/building-faster-algorithms-with-objects.html</guid>
         
         
         <category>javascript</category>
@@ -194,8 +194,8 @@ of multiplying by 2 as we shift.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;http://www.exploringbinary.com/binary-converter/&quot;&gt;Exploring Binary: Binary Converter&lt;/a&gt; You can use this if you want to test yourself.&lt;/p&gt;
 </description>
         <pubDate>Sun, 12 Jul 2015 10:00:00 -0700</pubDate>
-        <link>http://yakomaru.github.io/binary/2015/07/12/convert-binary-to-decimal-with-mental-math.html</link>
-        <guid isPermaLink="true">http://yakomaru.github.io/binary/2015/07/12/convert-binary-to-decimal-with-mental-math.html</guid>
+        <link>http://nathanielparrish.com/binary/2015/07/12/convert-binary-to-decimal-with-mental-math.html</link>
+        <guid isPermaLink="true">http://nathanielparrish.com/binary/2015/07/12/convert-binary-to-decimal-with-mental-math.html</guid>
         
         
         <category>binary</category>
@@ -275,8 +275,8 @@ order function vocabulary in Javascript takes time, but the benefits are well wo
 &lt;p&gt;&lt;a href=&quot;http://eloquentjavascript.net/05_higher_order.html&quot;&gt;Eloquent Javascript Chapter 5: Higher-Order Functions&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Sun, 12 Jul 2015 05:00:00 -0700</pubDate>
-        <link>http://yakomaru.github.io/javascript/2015/07/12/why-use-higher-order-functions.html</link>
-        <guid isPermaLink="true">http://yakomaru.github.io/javascript/2015/07/12/why-use-higher-order-functions.html</guid>
+        <link>http://nathanielparrish.com/javascript/2015/07/12/why-use-higher-order-functions.html</link>
+        <guid isPermaLink="true">http://nathanielparrish.com/javascript/2015/07/12/why-use-higher-order-functions.html</guid>
         
         
         <category>javascript</category>
@@ -291,7 +291,7 @@ order function vocabulary in Javascript takes time, but the benefits are well wo
     </article>
 
     <footer>
-      <span><a href="http://yakomaru.github.io">Nathaniel Parrish</a></span>
+      <span><a href="http://nathanielparrish.com">Nathaniel Parrish</a></span>
       <span><a href="https://github.com/yakomaru/"><i class="fa fa-github-square"></i></a><a href="https://plus.google.com/117699387184762704869/about/p/pub"><i class="fa fa-google-plus-square"></i></a></span>
       <span>&copy; 2015</span>
     </footer>
