@@ -4,7 +4,6 @@ layout: blank
     {% for page in site.posts %}
     <article>
       <header>
-        <meta name="google-site-verification" content="M7MTVH2imOdKOK1U2Pqdy26XHeizU5fcLxUo4Wf3BcQ" />
         <h2><a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></h2>
         <p>{% if page.author %}{{ page.author }} • {% endif %}{% if page.date %}<time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%b %-d, %Y" }}</time>{% endif %}{% if page.categories %} • {{ page.categories | array_to_sentence_string }}{% endif %}</p>
       </header>
