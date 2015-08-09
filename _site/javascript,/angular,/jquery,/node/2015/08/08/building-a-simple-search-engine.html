@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Niklas Buschmann 2015 MIT <http://github.com/niklasbuschmann> -->
+    <meta name="google-site-verification" content="M7MTVH2imOdKOK1U2Pqdy26XHeizU5fcLxUo4Wf3BcQ" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    
+    <meta name="description" content="Software engineering blog">
+    <title> building a simple search engine › Nathaniel Parrish</title>
+    <link rel="canonical" href="http://yakomaru.github.io/javascript,/angular,/jquery,/node/2015/08/08/building-a-simple-search-engine.html">
+    <link href="/main.css" rel="stylesheet" type="text/css">
+    <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,200italic,300italic,400italic,600italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Gentium+Basic:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+    <link rel="alternate" type="application/rss+xml" title="Nathaniel Parrish &raquo; Feed" href="/feed.xml">
+    <script src="//nathanielparrish.disqus.com/embed.js" async></script>
+    
+  </head>
+  <body>
+    <header>
+      <h1><a href="/">Nathaniel Parrish</a></h1>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li><li><a href="/archive.html">Archive</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+    <div>Software engineering blog</div>
+    <article>
+      <header>
+        <h2><a href="/javascript,/angular,/jquery,/node/2015/08/08/building-a-simple-search-engine.html">building a simple search engine</a></h2>
+        <p><time datetime="2015-08-08T09:30:00-07:00">Aug 8, 2015</time> • javascript,, angular,, jquery,, and node</p>
+      </header>
+      <div>
+<p>A brief overview of some of the challenges I faced while making a search engine.</p>
+
+<p><strong>Introduction</strong></p>
+
+<p>I recently built an application I like to call Inquiry. Inquiry accepts a webpage as input,
+which it then parses for links and keywords. After obtaining all the links on the original page, 
+Inquiry then requests the pages at those links and parses them for keywords. The end goal is to
+build an object filled with pages and associated keywords which can then be filtered with
+Angular.</p>
+
+<p>To see it in action, check out <a href="http://inquiry-search.heroku.com">Inquiry</a> or host it locally by
+downloading the repository from <a href="https://github.com/yakomaru/inquiry">GitHub</a>.</p>
+
+<p><strong>CORS Requests</strong></p>
+
+<p>I initially planned to make this application 100% front-end without the need for a server. This 
+was my first mistake, thanks to the same origin policy. The same origin policy states that
+http requests from scripts can only be made to the domain they originate from. This means my
+front-end search engine had no way of making http requests to outside web pages.</p>
+
+<p>There are a few ways to solve this issue, but I ultimately chose to bite the bullet and build
+a simple server. The addition of a server allowed for my application to make requests to the server 
+instead. The server can then make unrestricted requests to other web pages and then return the 
+obtained html file as a string to the application.</p>
+
+<p><strong>Manually Updating the Angular View</strong></p>
+
+<p>Another issue I faced involved an Angular specific problem. For the most part, Angular is very
+good at updating the view when the user interacts with the page, but I found it isn’t as good
+at keeping track of changing objects on the back-end. An easy way to force Angular to update
+is to call <code>$scope.$apply()</code> within the controller.</p>
+
+<p><strong>Using JQuery on HTML Data</strong></p>
+
+<p>After grabbing html data from a given website, I was faced with the challenge of parsing out
+the links and keywords. JQuery makes this task easy, but how can you use JQuery on a string? 
+Luckily I stumbled upon the <a href="https://developer.mozilla.org/en-US/docs/Web/API/DOMParser">DOM parser</a>. 
+The DOM parser allowed me to parse the stringified html into a DOM object which can then be 
+easily passed to JQuery with <code>$('a', domObj)</code> to find all the anchor tags. JQuery then has the ability 
+to pull out links or text from each tag.</p>
+
+<p><strong>Conclusion</strong></p>
+
+<p>Building this application was a great experience for me and I feel like I learned a lot from it.
+May the knowledge I gained help the rest of you.</p>
+
+      </div>
+      
+      
+      <div id="disqus_thread"></div>
+      <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      
+    </article>
+
+    <footer>
+      <span><a href="http://yakomaru.github.io">Nathaniel Parrish</a></span>
+      <span><a href="https://github.com/yakomaru/"><i class="fa fa-github-square"></i></a><a href="https://plus.google.com/117699387184762704869/about/p/pub"><i class="fa fa-google-plus-square"></i></a></span>
+      <span>&copy; 2015</span>
+    </footer>
+  </body>
+</html>

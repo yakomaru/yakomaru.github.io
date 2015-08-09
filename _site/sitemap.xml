@@ -1,24 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://nathanielparrish.com/javascript/2015/07/19/building-faster-algorithms-with-objects.html</loc>
+    <loc>http://yakomaru.github.io/javascript,/angular,/jquery,/node/2015/08/08/building-a-simple-search-engine.html</loc>
+    <lastmod>2015-08-08T09:30:00-07:00</lastmod>
+  </url>
+  <url>
+    <loc>http://yakomaru.github.io/javascript/2015/07/19/building-faster-algorithms-with-objects.html</loc>
     <lastmod>2015-07-19T11:30:00-07:00</lastmod>
   </url>
   <url>
-    <loc>http://nathanielparrish.com/binary/2015/07/12/convert-binary-to-decimal-with-mental-math.html</loc>
+    <loc>http://yakomaru.github.io/binary/2015/07/12/convert-binary-to-decimal-with-mental-math.html</loc>
     <lastmod>2015-07-12T10:00:00-07:00</lastmod>
   </url>
   <url>
-    <loc>http://nathanielparrish.com/javascript/2015/07/12/why-use-higher-order-functions.html</loc>
+    <loc>http://yakomaru.github.io/javascript/2015/07/12/why-use-higher-order-functions.html</loc>
     <lastmod>2015-07-12T05:00:00-07:00</lastmod>
   </url>
   <url>
-    <loc>http://nathanielparrish.com/404.html</loc>
+    <loc>http://yakomaru.github.io/404.html</loc>
   </url>
   <url>
-    <loc>http://nathanielparrish.com/archive.html</loc>
+    <loc>http://yakomaru.github.io/archive.html</loc>
   </url>
   <url>
-    <loc>http://nathanielparrish.com/</loc>
+    <loc>http://yakomaru.github.io/</loc>
   </url>
 </urlset>
