@@ -1,7 +1,7 @@
 ---
 title:  "building a simple search engine"
 date:   2015-08-08 16:30:00
-categories: javascript angular jquery node
+categories: angular jquery
 ---
 
 A brief overview of some of the challenges I faced while making a search engine.
