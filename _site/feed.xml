@@ -41,8 +41,8 @@
     <description>Software engineering blog</description>
     <link>http://yakomaru.github.io</link>
     <atom:link href="http://yakomaru.github.iofeed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sat, 08 Aug 2015 17:01:20 -0700</pubDate>
-    <lastBuildDate>Sat, 08 Aug 2015 17:01:20 -0700</lastBuildDate>
+    <pubDate>Wed, 19 Aug 2015 23:04:50 -0700</pubDate>
+    <lastBuildDate>Wed, 19 Aug 2015 23:04:50 -0700</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -352,7 +352,7 @@ order function vocabulary in Javascript takes time, but the benefits are well wo
 
     <footer>
       <span><a href="http://yakomaru.github.io">Nathaniel Parrish</a></span>
-      <span><a href="https://github.com/yakomaru/"><i class="fa fa-github-square"></i></a><a href="https://plus.google.com/117699387184762704869/about/p/pub"><i class="fa fa-google-plus-square"></i></a></span>
+      <span><a href="https://github.com/yakomaru/"><i class="fa fa-github-square"></i></a><a href="https://www.linkedin.com/pub/nathaniel-parrish/103/995/861"><i class="fa fa-linkedin-square"></i></a></span>
       <span>&copy; 2015</span>
     </footer>
   </body>

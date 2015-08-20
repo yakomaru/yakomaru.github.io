@@ -25,13 +25,15 @@ style:
 links:
   - github: "https://github.com/yakomaru/"
 #  - twitter: "https://twitter.com/me/"
-  - google-plus: "https://plus.google.com/117699387184762704869/about/p/pub"
+#  - google-plus: "https://plus.google.com/117699387184762704869/about/p/pub"
+  - linkedin: "https://www.linkedin.com/pub/nathaniel-parrish/103/995/861"
 #  - reddit: "https://www.reddit.com/user/me/"
 #  - youtube: "https://www.youtube.com/user/me"
 #  - steam: "http://steamcommunity.com/id/me/"
 
 excerpt_separator: "\n\n\n"
 defaults: [{scope: {path: ""}, values: {layout: "default"}}, {scope: {path: "", type: "posts"}, values: {comments: true}}]
+highlighter: rouge
 encoding: utf-8
 gems:
   - jekyll-sitemap
