@@ -29,20 +29,6 @@ console.log(pointer1, pointer2); // both are now {a: 2}
 Note that when either variable pointer1 or pointer2 change, the shared object they point to in 
 memory changes.
 
-Pointers can also be stored in objects:
-
-{% highlight javascript %}
-
-var obj = {value: null};
-obj.value = obj;
-
-console.log(obj); // {value: {value: {value: ...}}} and so on
-
-{% endhighlight %}
-
-In this case the property value in obj contains a pointer to it's own object which means when 
-attempting to log it the nested objects never end.
-
 **Passing Arrays**
 
 Because variables for objects and arrays (which are really just objects in Javascript) are all 
