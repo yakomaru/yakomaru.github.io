@@ -21,7 +21,7 @@ Here's an example:
 var pointer1 = {a: 1};
 var pointer2 = pointer1;
 
-pointer1.a++;
+pointer2.a++;
 console.log(pointer1, pointer2); // both are now {a: 2}
 
 {% endhighlight %}
@@ -40,15 +40,15 @@ Example:
 
 {% highlight javascript %}
 
-var arr = [1, 2, 3];
-var func = function(array) {
-  for(var i = 0; i < array.length; i++) {
-    array[i]++;
+var arr1 = [1, 2, 3];
+var func = function(arr2) {
+  for(var i = 0; i < arr2.length; i++) {
+    arr2[i]++;
   }
 };
 
-func(arr);
-console.log(arr); // [2, 3, 4]
+func(arr1);
+console.log(arr1); // [2, 3, 4]
 
 {% endhighlight %}
 
@@ -57,17 +57,17 @@ To avoid modifying the original array, a copy of the array should be made before
 
 {% highlight javascript %}
 
-var arr = [1, 2, 3];
-var func = function(array) {
-  array = array.slice();
-  for(var i = 0; i < array.length; i++) {
-    array[i]++;
+var arr1 = [1, 2, 3];
+var func = function(arr2) {
+  arr = arr2.slice();
+  for(var i = 0; i < arr2.length; i++) {
+    arr2[i]++;
   }
-  return array;
+  return arr2;
 };
 
-console.log(func(arr)); // [2, 3, 4]
-console.log(arr); // [1, 2, 3]
+console.log(func(arr1)); // [2, 3, 4]
+console.log(arr1); // [1, 2, 3]
 
 {% endhighlight %}
 
