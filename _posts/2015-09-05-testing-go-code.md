@@ -1,7 +1,7 @@
 ---
 title:  "testing go code"
 date:   2015-09-05 13:30:00
-categories: go, testing
+categories: go testing
 ---
 
 A quick overview of how to write tests for the Go programming language.
